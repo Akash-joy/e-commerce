@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetCategoriesService } from 'src/services/get-categories.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getCategoriesService:GetCategoriesService) { }
 
   ngOnInit(): void {
+    this.getCategoriesService.getCategories().subscribe((res=>{console.log(res)}))
   }
 
 }
