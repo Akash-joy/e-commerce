@@ -1,0 +1,20 @@
+.product-item {
+    height: 230px; /* Adjust this height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-item img {
+    width: 100%;
+    height: auto; /* Adjust if necessary */
+    max-height: 200px; /* Adjust this height as needed */
+    object-fit: cover;
+}
+
+.product-item .product-title {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

@@ -6,7 +6,9 @@ export const environment = {
   production: false,
   apiUrl :'https://fakestoreapi.com',
   endpoints: {
-  getAllCategories: '/products/categories'
+  getAllCategories: '/products/categories',
+  getSingleUser:'/users/1',
+  getAllProducts:'/products'
   }
 };
 
