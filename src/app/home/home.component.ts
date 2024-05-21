@@ -14,13 +14,7 @@ export class HomeComponent implements OnInit {
 
   responsiveOptions: any[] =[];
 
-  value!: number;
-    
-  categories: any[] = [
-      { name: 'Option 1', value: 1 },
-      { name: 'Option 2', value: 2 },
-      { name: 'Option 3', value: 3 }
-  ];
+  
 
   constructor(private getCategoriesService: GetCategoriesService,private GetProductsService:GetProductsService) {}
 
@@ -42,9 +36,7 @@ export class HomeComponent implements OnInit {
           numScroll: 1
       }
   ];
-  this.getCategoriesService.getCategories().subscribe((res) => {
-    this.categories = res.map(category => ({ name: category, value: category })); 
-  });
+    this.getCategoriesService.getCategories().subscribe((res) => {console.log(res)});
     this.GetProductsService.getAllProducts().subscribe((res) => {this.products=res;console.log(res)});
 
   }

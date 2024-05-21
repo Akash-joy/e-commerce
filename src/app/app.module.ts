@@ -18,9 +18,6 @@ import { RippleModule } from 'primeng/ripple';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
-import { FormsModule } from '@angular/forms';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { DataViewModule } from 'primeng/dataview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +39,7 @@ import { DataViewModule } from 'primeng/dataview';
      CarouselModule,
       ButtonModule,
        TagModule,
-       FormsModule,
-        SelectButtonModule,
-        DataViewModule
+       
   ],
   providers: [],
   bootstrap: [AppComponent]
