@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   value!: number;
 
-  SelectedCategories:string='';
+  SelectedCategories:any=localStorage.getItem('selectedCategory');
 
   constructor(private getCategoriesService: GetCategoriesService,private GetProductsService:GetProductsService,private router: Router) {}
 
@@ -44,10 +44,15 @@ export class HomeComponent implements OnInit {
           numScroll: 1
       }
   ];
+
+  if(this.SelectedCategories){
+    this.displayProduct(this.SelectedCategories);
+  }
   }
 
   displayProduct(category:string){
     this.SelectedCategories=category;
+    localStorage.setItem('selectedCategory',this.SelectedCategories)
     this.GetProductsService.getProductBycat(category).subscribe((res)=>{
     this.products=res;
     })

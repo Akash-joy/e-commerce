@@ -1,0 +1,39 @@
+<div class="formgrid grid mt-8">
+
+    <div class="field col-12 md:col-2">
+        <label for="userName">Username:</label>
+        <input id="UserName" pInputText type="text" [(ngModel)]="user.username">
+    </div>
+    <div class="field col-12 md:col-2">
+        <label for="password">password:</label>
+        <p-password id="password" type="text" [(ngModel)]="user.password" [toggleMask]="true"></p-password>
+    </div>
+</div>
+<div class="formgrid grid mt-8">
+    <div class="field col-12 md:col-6">
+        <label for="firstname6">Firstname</label>
+        <input id="firstname6" type="text" [(ngModel)]="user?.name.firstname" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-6">
+        <label for="lastname6">Lastname</label>
+        <input id="lastname6" type="text" [(ngModel)]="user?.name.lastname" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-6">
+        <label for="city">City</label>
+        <input id="city" type="text"  [(ngModel)]="user?.address.city" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-3">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text"  [(ngModel)]="user.phone" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+
+    </div>
+    <div class="field col-12 md:col-3">
+        <label for="zip">Zip</label>
+        <input id="zip" type="text" [(ngModel)]="user?.address.zipcode" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-6">
+        <label for="email">Email</label>
+        <input id="email" type="text"  [(ngModel)]="user.email" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+   
+</div>

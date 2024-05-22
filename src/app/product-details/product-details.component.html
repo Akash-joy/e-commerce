@@ -1,3 +1,5 @@
+<p-toast position="top-left" key="tl"></p-toast>
+
 <div class="mt-7 flex" *ngIf="product">
     <div class="flex-initial flex ">
         <div class="relative mx-auto ">
@@ -21,7 +23,7 @@
             <p-rating [(ngModel)]="product?.rating.rate" [readonly]="true" [cancel]="false" ></p-rating>
         </div>
         <div class="flex justify-content-end mr-8 mt-4">
-            <button pButton pRipple type="button" label="Add to cart"   ></button>
+            <button pButton pRipple type="button" label="Add to cart"  (click)="AddCart(product.id)" ></button>
         </div>
     </div>
 </div>

@@ -16,16 +16,24 @@ import { AvatarModule } from 'primeng/avatar';
 import { RippleModule } from 'primeng/ripple';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RatingModule} from 'primeng/rating';
-
+import {ToastModule} from 'primeng/toast';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { ListboxModule } from 'primeng/listbox';
+import { MessageService } from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './profile/profile.component';
+import { CartComponent } from './cart/cart.component'; 
+import { PasswordModule } from 'primeng/password';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProfileComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -46,10 +54,14 @@ import { ListboxModule } from 'primeng/listbox';
       ReactiveFormsModule,
       FormsModule,
       CardModule,
-      RatingModule
+      RatingModule,
+      ToastModule,
+      BrowserAnimationsModule,
+      PasswordModule
+        
        
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,7 +10,8 @@ export const environment = {
   getSingleUser:'/users/1',
   getAllProducts:'/products',
   singleCategory:'/products/category/',
-  singleproduct:'/products/'
+  singleproduct:'/products/',
+  getUsercart:'/carts/user/1'
   }
 };
 
