@@ -10,15 +10,20 @@ import { GetProductsService } from 'src/services/get-products.service';
 })
 export class HomeComponent implements OnInit {
 
-  products: any[]=[];
+  categories:any[]=[];
+
+  products:any[]=[];
 
   responsiveOptions: any[] =[];
 
-  
+  value!: number;
+
+  SelectedCategories:string='';
 
   constructor(private getCategoriesService: GetCategoriesService,private GetProductsService:GetProductsService) {}
 
   ngOnInit(): void {
+    this.getCategoriesService.getCategories().subscribe((res) => {this.categories=res;console.log(res)});
     this.responsiveOptions = [
       {
           breakpoint: '1199px',
@@ -36,10 +41,14 @@ export class HomeComponent implements OnInit {
           numScroll: 1
       }
   ];
-    this.getCategoriesService.getCategories().subscribe((res) => {console.log(res)});
-    this.GetProductsService.getAllProducts().subscribe((res) => {this.products=res;console.log(res)});
-
   }
 
-  
+  displayProduct(category:string){
+    this.SelectedCategories=category;
+    this.GetProductsService.getProductBycat(category).subscribe((res)=>{
+    this.products=res;
+      
+    })
+
+  }
 }

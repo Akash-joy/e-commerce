@@ -8,7 +8,8 @@ export const environment = {
   endpoints: {
   getAllCategories: '/products/categories',
   getSingleUser:'/users/1',
-  getAllProducts:'/products'
+  getAllProducts:'/products',
+  singleproduct:'/products/category/'
   }
 };
 

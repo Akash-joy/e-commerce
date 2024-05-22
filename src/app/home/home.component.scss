@@ -1,13 +1,13 @@
 .product-item {
-    height: 230px; /* Adjust this height as needed */
+    height: 190px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .product-item img {
     width: 100%;
-    height: auto; /* Adjust if necessary */
-    max-height: 200px; /* Adjust this height as needed */
+    height: auto; 
+    max-height: 200px; 
     object-fit: cover;
 }
 
