@@ -1,1 +1,27 @@
-<p>product-details works!</p>
+<div class="mt-7 flex" *ngIf="product">
+    <div class="flex-initial flex ">
+        <div class="relative mx-auto ">
+            <img [src]="product?.image" [alt]="product?.title"
+                class="w-5 h-5  ml-8 border-round justify-content-start" />
+           
+        </div>
+    </div>
+
+    <div class="mr-4">
+        <h3 class="font-bold ">{{product?.title}}</h3>
+        
+        <div >
+            <h4 class="mb-1">Description</h4>
+            {{product?.description}}
+        </div>
+        <div >
+            <h4 class="mb-1">Price: ₹{{product?.price}}</h4>
+        </div>
+        <div  class="pt-3">
+            <p-rating [(ngModel)]="product?.rating.rate" [readonly]="true" [cancel]="false" ></p-rating>
+        </div>
+        <div class="flex justify-content-end mr-8 mt-4">
+            <button pButton pRipple type="button" label="Add to cart"   ></button>
+        </div>
+    </div>
+</div>

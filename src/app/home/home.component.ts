@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
 
   products:any[]=[];
 
+  productAll:any[]=[];
+
   responsiveOptions: any[] =[];
 
   value!: number;
@@ -51,8 +53,7 @@ export class HomeComponent implements OnInit {
     })
   }
   getProductDetails(productId:string){
-    console.log(productId)
     this.router.navigate(['/productDetails', productId]);
-
   }
+
 }

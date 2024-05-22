@@ -13,7 +13,7 @@ export class GetProductsService {
     return this.http.get<any[]>(environment.apiUrl + environment.endpoints.getAllProducts)
   }
   getProductBycat(category:string){
-    return this.http.get<any[]>(environment.apiUrl + environment.endpoints.singleproduct + category);
+    return this.http.get<any[]>(environment.apiUrl + environment.endpoints.singleCategory + category);
   }
   getProductDetails(productId:string){
     return this.http.get<any[]>(environment.apiUrl + environment.endpoints.singleproduct + productId);

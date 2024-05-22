@@ -9,7 +9,8 @@ export const environment = {
   getAllCategories: '/products/categories',
   getSingleUser:'/users/1',
   getAllProducts:'/products',
-  singleproduct:'/products/category/'
+  singleCategory:'/products/category/',
+  singleproduct:'/products/'
   }
 };
 
