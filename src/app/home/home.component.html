@@ -3,7 +3,7 @@
         <h2 class="ml-2 pl-3">Categories</h2>
         <div *ngIf="categories && categories.length > 0">
             <div *ngFor="let category of categories" class="card m-2 p-3  " style="float: left;">
-                <button pButton pRipple type="button" label={{category}}  class="p-button-secondary p-button-text" (click)="displayProduct(category)"></button>
+                <button pButton pRipple type="button" label="{{category | uppercase}}"  class="p-button-secondary p-button-text" (click)="displayProduct(category)"></button>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
                 [responsiveOptions]="responsiveOptions" 
                 [autoplayInterval]=3000>
                 <ng-template let-product pTemplate="item">
-                    <div class="border-1 surface-border border-round m-2 p-3 product-item ">
+                    <div class="border-1 surface-border border-round m-2 p-3 product-item " (click)="getProductDetails(product.id)">
                         <div class="mb-3">
                             <div class="relative mx-auto">
                                 <img src="{{product.image}}" [alt]="product.title" class="w-1 h-1 border-round" />
