@@ -7,31 +7,37 @@ import { GetUserService } from 'src/services/get-user.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  
-  styleUrls: ['./app.component.scss']
+
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'e-commerce';
 
-  cartCount:number=0;
+  cartCount!: number;
 
-  constructor(private getUserService:GetUserService,private cartService: CartCountService,private router:Router){}
+  searchValue!: string;
+
+  constructor(
+    private getUserService: GetUserService,
+    private cartService: CartCountService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-
-    this.cartService.cartCount$.subscribe(count => {
+    this.cartService.cartCount$.subscribe((count) => {
       this.cartCount = count;
     });
-
 
     const initialCount = +(localStorage.getItem('cartCount') ?? 0);
     this.cartService.updateCartCount(initialCount);
   }
-  navigateTocard(){
+  navigateTocard() {
     this.router.navigate(['/card']);
   }
-  navigateToProfile(){
+  navigateToProfile() {
     this.router.navigate(['/profile']);
-
+  }
+  onSearchChange(){
+    this.router.navigate(['/home'], { queryParams: { search: this.searchValue } });
   }
 }

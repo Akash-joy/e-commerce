@@ -1,15 +1,15 @@
 <div class="grid">
-    <div class="pt-3 col-12">
-        <h2 class="ml-2 pl-3">Categories</h2>
-        <div *ngIf="categories && categories.length > 0">
+    <div class="pt-3 col-12" >
+        <h2 class="ml-2 pl-3" *ngIf="!searchTerm">Categories</h2>
+        <div *ngIf="categories && categories.length > 0 && !searchTerm">
             <div *ngFor="let category of categories" class="card m-2 p-3  " style="float: left;">
                 <button pButton pRipple type="button" label="{{category | uppercase}}"  class="p-button-secondary p-button-text" (click)="displayProduct(category)"></button>
             </div>
         </div>
     </div>
     
-    <div  *ngIf="SelectedCategories && products">
-        <h2 class="ml-2 pl-3">{{SelectedCategories  | uppercase}}</h2>
+    <div  *ngIf="SelectedCategories && products.length > 0">
+        <h2 class="ml-2 pl-3" *ngIf="!searchTerm">{{SelectedCategories  | uppercase}}</h2>
         <div class="card" >
             <p-carousel 
                 [value]="products" 
@@ -41,5 +41,8 @@
             </p-carousel>
         </div>
     </div>
-    
+</div>
+
+<div *ngIf="SelectedCategories && !(products.length > 0)" class="flex justify-content-center flex-wrap">
+<h3>No product Found.</h3>
 </div>

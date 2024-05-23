@@ -1,9 +1,8 @@
 <div class="card">
     <p-menubar>
         <ng-template pTemplate="start">
-            <div routerLink="/home">
+            <div routerLink="/home"  (click)="searchValue=''">
                 <i class="pi pi-home" style="font-size: 2rem"></i>
-                   
             </div>
                 
                 
@@ -12,7 +11,7 @@
 
         <ng-template pTemplate="end">
             <div class="flex align-items-center gap-5">  
-                <input type="text" size="40" class="h-3rem"   pInputText placeholder="Search"/>
+                <input type="text" size="40" class="h-3rem" [(ngModel)]="searchValue" (input)="onSearchChange()"  pInputText placeholder="Search"/>
                 <p-avatar image="https://img.icons8.com/?size=100&id=119194&format=png&color=000000" pBadge value="{{cartCount}}" (click)="navigateTocard()"></p-avatar>
                 <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" (click)="navigateToProfile()"></p-avatar>
             </div>
